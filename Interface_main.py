@@ -2,8 +2,9 @@ import streamlit as st
 import base64
 import Functions
 
-
-st.title("Upload e Download de Imagem")
+# Adicione sua logo como um elemento de imagem
+st.image("Udesc_LOGO.png", use_column_width=True)  # Substitua "caminho_para_sua_logo.png" pelo caminho real da sua logo
+st.title("Insira abaixo o selo da UDESC na sua foto de perfil")
 
 # Upload da imagem
 uploaded_image = st.file_uploader("Faça o upload da sua imagem", type=["jpg", "png", "jpeg"])
@@ -13,7 +14,7 @@ if uploaded_image is not None:
     # st.image(uploaded_image, caption="Imagem Carregada", use_column_width=True)
 
     # Botão para baixar a imagem
-    if st.button("Baixar Imagem com selo da UDESC"):
+    if st.button("Clique aqui para gerar sua nova imagem!"):
         # Salvar a imagem em um arquivo temporário
         with open("temp_image.png", "wb") as f:
             f.write(uploaded_image.read())
